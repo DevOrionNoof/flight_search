@@ -1,0 +1,176 @@
+/* 
+ * Main scripts file for the flight schedule website.
+ * Assignment 4, CSCI 1170, Fall 2022
+ * Starter code provided by Dr. Mayra Barrera Machuca
+ */
+
+ /* General body styling, body set up as a grid container */
+body {
+	width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, auto);
+	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page banner styling, set to apper on the top row */
+.pg-banner {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	border-bottom: 5px solid steelblue;
+}
+.header-container {
+	padding: 0 0.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Page footer styling, set to apper on the bottom row */
+.pg-footer {
+	padding: 0 0.5em;
+	grid-row: -3/-2;
+	grid-column: 1/-1;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-top: 1px solid gold;
+	font-size: smaller;
+}
+
+/* Navigation elements - primary (main nav in the banner), secondary (smaller nav in the banner) and footer nav. */
+.primary-nav {
+	display: flex;
+}
+.primary-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.primary-nav > a:hover,
+.primary-nav > a:active {
+	color: maroon;
+}
+
+.footer-nav {
+	display: flex;
+}
+.footer-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.footer-nav > a:hover,
+.footer-nav > a:active {
+	color: maroon;
+}
+
+
+/* Main content container to include all the flights */
+.container {
+	margin: 10px;
+	min-height: 300px;
+
+	grid-column: 1/5;
+
+	/* Add your styles for the Main container here */
+	display: grid;
+	grid-gap: 10px;
+	/* Changed the grid to auto in A5, so when there is one flight box the size changes*/
+	grid-template-columns: repeat(3, auto);
+}
+/* Mobile view with a breakpoint 840px */
+@media ( max-width: 840px ) {
+	.container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.item-container {
+	border: 2px solid gray;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: lightskyblue;
+}
+
+.item-title {
+	font-weight: bold;
+	color: black;
+}
+
+.item-subtitle {
+	margin: 0;
+	padding: 0;
+	font-style: italic;
+    color: darkblue;
+
+}
+
+.item-list {
+	color: lightskyblue;
+	background-color: darkblue;
+}
+
+.item-button {
+	margin-bottom: 5px;
+}
+
+/* Flight "bag" styling */
+.flights-selection-bag {
+	display: flex;
+	flex-direction: column;
+	background-color: darkblue;
+	color: lightskyblue;
+	width: 135%;
+	
+}
+
+.flights-selection-bag > h2 {
+	font-size: 16px;
+}
+
+/* Flight info boxes */
+.flight-info {
+	display: flex;
+    flex-direction: column;
+}
+
+.flight-availability-info {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+
+/* new A5 additions */
+
+/* Search form  */
+.search-form {
+	display: flex;
+	align-items: center;
+	grid-column: 1/-1;
+    grid-row: 2/3;
+    margin: 16px 0;
+}
+
+
+.search-form-input {
+    width: 120%;
+    max-width: 600px;
+	height: 40px;
+	margin-left: auto;
+	padding: 8px 16px;
+    box-sizing: border-box;
+}
+
+.search-form-button {
+	width: 100%;
+    max-width: 200px;
+	height: 40px;
+}
